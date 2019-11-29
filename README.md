@@ -1,5 +1,5 @@
-### Project discontinued
-Because of lack of time, the main developer has stopped maintaining this project. I'll try to work on it from time to time.
+### Project state
+Because of lack of time, the main developer has stopped maintaining this project. I'll try to work on it from time to time. Feel free to contribute.
 
 # RCON Web Admin
 
@@ -22,7 +22,7 @@ If you'd like to buy some coffee to the original developer, he would appreciate 
 * Run on every device that can install *node.js*
 * Multilanguage interface
 * One-Click update for the core and all installed widgets
-* rcon.web support (Even better as normal RCON sockets because of better stability)
+* rcon.web support (Even better than normal RCON sockets because of better stability)
 * Core widgets and their top features
   * Console - Provide a console interface to directly use rcon web commands in the most low level form
   * Autobot - For advanced users, a programmatic interface to write your own little code with high level features
@@ -41,7 +41,8 @@ If you'd like to buy some coffee to the original developer, he would appreciate 
 The widgets are powerful, they deserve an extra header here. All dashboard things are written in widgets. From the simplest to the most powerful tool, widgets are the way to go. They are some sort of "High level" programs inside the rcon web admin. You don't have to dig much into the code to write widgets. It's basically HTML and JS.
 
 ## Requirements
-- NodeJS min. v5.10.0
+- NodeJS v12.13.1
+- Used to work on NodeJS v5.10.0, but hasn't been tested since I updated the project
 
 ## Installation Windows
 * Download and install node.js (https://nodejs.org)
@@ -66,7 +67,7 @@ Just run all of this commands in the shell. **Note**: Never run this application
     node src/main.js install-core-widgets
     chmod 0755 -R startscripts *
     
-## Installation Raspberry pi
+## Installation on a Raspberry pi
 Same as linux. You may not be able to run the server or `npm install`, or even the node modules do not download. This will be because of a very old npm/nodejs version (for old raspberry pi for example). So you have to update nodejs and npm to a new version. **Warning**: This will delete old nodejs and npm installation. Make some backups before you do this.
 
     sudo apt-get purge nodejs npm
@@ -75,8 +76,11 @@ Same as linux. You may not be able to run the server or `npm install`, or even t
     tar -xvf node.tar.xz
     cd node-v6.9.3-linux-armv*
 
-## Installation Docker
-[itzg](https://hub.docker.com/r/itzg/) have made a great docker container for rcon web admin. If you prefer docker, you can do it with https://hub.docker.com/r/itzg/rcon/
+## Installation with Docker
+
+*This version is currently outdated until I manage to contact the maintainer*
+
+[itzg](https://hub.docker.com/r/itzg/) has made a great docker container for rcon web admin. If you prefer docker, you can do it with https://hub.docker.com/r/itzg/rcon/
     
 ## Start/Stop on Linux
 
@@ -100,7 +104,7 @@ On linux you can start the rcon web admin with your server start. For example on
 
 ## Widget developers
 
-Goto https://github.com/brainfoolong/rcon-web-admin/tree/master/public/widgets for more information.
+Goto https://github.com/lacaulac/rcon-web-admin/tree/master/public/widgets for more information.
 
 ## Troubleshooting
 
