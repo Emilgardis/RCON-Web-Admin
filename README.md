@@ -1,5 +1,5 @@
 ### Project discontinued
-Because of lack of time, i must discontinue this project. It will stay online, it will probably work out of the box. Maybe someone can take over development for this project?! Feel free to fork it.
+Because of lack of time, the main developer has stopped maintaining this project. I'll try to work on it from time to time.
 
 # RCON Web Admin
 
@@ -10,7 +10,7 @@ The most powerful feature is that this web admin can run on a server, raspberry 
 So imagine you've set-up rcon web admin so that it check users for high ping, VAC status or chat filter. The RCON web admin does it 24/7 for you, no need to have a tool opened all the time.
 
 # Support me
-If you like to buy some coffee, i will appriciate it. You can do this on [Patreon](https://www.patreon.com/brainfoolong) or via [PayPal](https://www.paypal.me/brainfoolong)
+If you'd like to buy some coffee to the original developer, he would appreciate it. You can do this on [Patreon](https://www.patreon.com/brainfoolong) or via [PayPal](https://www.paypal.me/brainfoolong)
 
 ## Features
 
