@@ -257,7 +257,7 @@ Widget.widgetIds = null;
  * @param {function=} callback
  */
 Widget.install = function (repository, callback) {
-    var unzip = require("unzip");
+    var unzip = require("unzipper");
     var dir = fs.realpathSync(__dirname + "/../public/widgets");
     dir = dir.replace(/\\/g, "/");
     if (repository.match(/^https/)) {
