@@ -59,7 +59,7 @@ Just run all of this commands in the shell. **Note**: Never run this application
 
     sudo apt-get install nodejs npm
     sudo npm update npm -g
-    wget https://codeload.github.com/brainfoolong/rcon-web-admin/zip/master -O rcon-web-admin.zip
+    wget https://codeload.github.com/lacaulac/rcon-web-admin/zip/master -O rcon-web-admin.zip
     unzip rcon-web-admin.zip
     mv rcon-web-admin-master rcon-web-admin
     cd rcon-web-admin
@@ -68,6 +68,7 @@ Just run all of this commands in the shell. **Note**: Never run this application
     chmod 0755 -R startscripts *
     
 ## Installation on a Raspberry pi
+*As mentioned in the requirements, the version of NodeJS I'm working with is 12.13.1. Thus, this might not work as expected*
 Same as linux. You may not be able to run the server or `npm install`, or even the node modules do not download. This will be because of a very old npm/nodejs version (for old raspberry pi for example). So you have to update nodejs and npm to a new version. **Warning**: This will delete old nodejs and npm installation. Make some backups before you do this.
 
     sudo apt-get purge nodejs npm
@@ -78,7 +79,7 @@ Same as linux. You may not be able to run the server or `npm install`, or even t
 
 ## Installation with Docker
 
-*This version is currently outdated until I manage to contact the maintainer*
+*This version is currently outdated.*
 
 [itzg](https://hub.docker.com/r/itzg/) has made a great docker container for rcon web admin. If you prefer docker, you can do it with https://hub.docker.com/r/itzg/rcon/
     
