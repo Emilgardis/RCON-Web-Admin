@@ -1,114 +1,143 @@
-### Project state
-Because of lack of time, the main developer has stopped maintaining this project. I'll try to work on it from time to time. Feel free to contribute.
+### Notice:  __Continued development of the project has moved to this fork.__ The original developer, @brainfoolong, stopped maintaining [the original project](https://github.com/brainfoolong/rcon-web-admin) due to their lack of time.
 
 # RCON Web Admin
 
-RCON Web Admin as a powerful web interface to control your RCON server. Every RCON server will work.
+RCON Web Admin is a powerful web interface to control your RCON servers. All servers with RCON support should work.
 
-The most powerful feature is that this web admin can run on a server, raspberry pi or another device that is online 24/7. It does all jobs for you, even if you are not connected to the interface. You can install it almost everywhere.
+This application can install and run on a server, Raspberry Pi, or other devices which are online 24/7.
 
-So imagine you've set-up rcon web admin so that it check users for high ping, VAC status or chat filter. The RCON web admin does it 24/7 for you, no need to have a tool opened all the time.
+Out of the box, RCON Web Admin can check users for high ping, VAC status, or filter the chat for you around the clock.
 
 # Support me
-If you'd like to buy some coffee to the original developer, he would appreciate it. You can do this on [Patreon](https://www.patreon.com/brainfoolong) or via [PayPal](https://www.paypal.me/brainfoolong)
+
+If you'd like to buy some coffee to support the original developer, he would appreciate it. You can do this via [Patreon](https://www.patreon.com/brainfoolong) or  [PayPal](https://www.paypal.me/brainfoolong)
 
 ## Features
 
-* Full administration via your browser, it's just a website
-* Unlimited users and servers, Admin roles can manage servers, users can use the dashboard
-* Ever more fine granulated user permissions to restrict access to specific server commands and interface features. If you want a user that only can use the 'say' command, you can do it.
-* Powerful widget system - Developers can add new features for the dashboard easily
-* Responsible - The frontend is designed for every device, desktop or smartphone.
-* Run on every device that can install *node.js*
-* Multilanguage interface
-* One-Click update for the core and all installed widgets
-* rcon.web support (Even better than normal RCON sockets because of better stability)
-* Core widgets and their top features
-  * Console - Provide a console interface to directly use rcon web commands in the most low level form
-  * Autobot - For advanced users, a programmatic interface to write your own little code with high level features
-  * Rustboard - A dedicated widget for the game 'Rust', provides a lot usefull tools such as playerlist, banlist, chat, kick/ban/admins/mods, steam information incl. VAC ban checks, and a lot more
-  * Timed Commands - As the name say, you can easily schedule any server command you want to execute on a specific date or time.
-* So many more... Give it a try
+* RCON administration with your web browser
+* Unlimited users and servers, admin roles can manage servers, users may use the dashboard.
+* Granular user permissions to restrict access to specific server commands and interface components.
+  * If you wish to configure a user to only use the `say` command, you can.
+* Powerful widget framework - Developers can add new dashboard components easily
+* Responsive frontend which should display correctly on most devices, desktop or smartphone.
+* Internationalization support
+* One-click update for the core and all installed widgets
+* `rcon.web` support (usually more stable than legacy RCON)
+* Core widgets and their features:
+  * Console - Provides a console interface to directly execute and recieve output from RCON commands
+  * Autobot - For advanced users; an interface to write your own high-level code for automation
+  * Rustboard - A dedicated widget for the Rust. Provides tools such as the player & ban list, chat, kick/ban, admin/mod config, Steam info with VAC ban checking, and more
+  * Timed Commands - Schedule server commands you wish to execute at a specific datetime.
 
 ## Supported/tested games
 
 * Rust (Most tested at the moment)
 * Counter-Strike: Go (Basic tests with the console widget)
 * Minecraft (Basic tests with the console widget)
-* Note: Every other RCON supporting game server will work, it's just untested but console widget is generic for all games
+* Note: Despite the lack of testing, all other servers with RCON support should work. The console widget is generic for all games.
 
-## Widgets 
-The widgets are powerful, they deserve an extra header here. All dashboard things are written in widgets. From the simplest to the most powerful tool, widgets are the way to go. They are some sort of "High level" programs inside the rcon web admin. You don't have to dig much into the code to write widgets. It's basically HTML and JS.
+## Widgets
+
+All components of the dashboard are written as widgers. Widgets can be very simple to very complex, depending on what is necessary.
+Widgets are written in HTML and JS. Visit [here](https://github.com/lacaulac/rcon-web-admin/tree/master/public/widgets) for more information.
 
 ## Requirements
-- NodeJS v12.13.1
-- Used to work on NodeJS v5.10.0, but hasn't been tested since I updated the project
 
-## Installation Windows
-* Download and install node.js (https://nodejs.org)
-* Download zip repository and unpack wherever you want
-* Open command line and goto unpacked folder (root of the application where the `package.json` is)
+* NodeJS v12.13.1
 
-Run following commands
+## Windows Installation
 
-    npm install
-    node src/main.js install-core-widgets
-    
-## Installation Linux
-Just run all of this commands in the shell. **Note**: Never run this application as root via `sudo`, it is not required. Also never install this application in a webserver directory than can be accessed from the web. The application create an own webserver with limited access to the public folder.
+* Download and install [NodeJS](https://nodejs.org)
+* Download and unpack this repository
 
-    sudo apt-get install nodejs npm
-    sudo npm update npm -g
-    wget https://codeload.github.com/lacaulac/rcon-web-admin/zip/master -O rcon-web-admin.zip
-    unzip rcon-web-admin.zip
-    mv rcon-web-admin-master rcon-web-admin
-    cd rcon-web-admin
-    npm install
-    node src/main.js install-core-widgets
-    chmod 0755 -R startscripts *
-    
-## Installation on a Raspberry pi
-*As mentioned in the requirements, the version of NodeJS I'm working with is 12.13.1. Thus, this might not work as expected*
-Same as linux. You may not be able to run the server or `npm install`, or even the node modules do not download. This will be because of a very old npm/nodejs version (for old raspberry pi for example). So you have to update nodejs and npm to a new version. **Warning**: This will delete old nodejs and npm installation. Make some backups before you do this.
+In the extracted directory, run the following commands:
+```bash
+$ npm install
+$ node src/main.js install-core-widgets
+```
 
-    sudo apt-get purge nodejs npm
-    ## Pi2 | wget https://nodejs.org/dist/v6.9.3/node-v6.9.3-linux-armv7l.tar.xz -O node.tar.xz
-    ## Pi A/A+, B/B+ und Zero (ARMv6) | wget https://nodejs.org/dist/v6.9.3/node-v6.9.3-linux-armv6l.tar.xz -O node.tar.xz
-    tar -xvf node.tar.xz
-    cd node-v6.9.3-linux-armv*
+## Linux Installation
 
-## Installation with Docker
+> **Note**: It is strongly advised to avoid running this application as root or with `sudo`, it is not required.
+> Also, avoid installing this application in a directory which can be accessed from the internet.
+> This application launches a self-contained webserver with limited access to the `/public` folder.
+> Failure to follow this advice could leave you vulnerable to security risks.
 
-*This version is currently outdated.*
+Run the following commands in the shell:
+```bash
+$ sudo apt-get install nodejs npm
+$ sudo npm update npm -g
+$ wget https://codeload.github.com/lacaulac/rcon-web-admin/zip/master -O rcon-web-admin.zip
+$ unzip rcon-web-admin.zip
+$ mv rcon-web-admin-master rcon-web-admin
+$ cd rcon-web-admin
+$ npm install
+$ node src/main.js install-core-widgets
+$ chmod 0755 -R startscripts *
+```
 
-[itzg](https://hub.docker.com/r/itzg/) has made a great docker container for rcon web admin. If you prefer docker, you can do it with https://hub.docker.com/r/itzg/rcon/
-    
-## Start/Stop on Linux
+## Environment Variables
 
-    sh startscripts/start-linux.sh start
-    sh startscripts/start-linux.sh stop
-    sh startscripts/start-linux.sh restart
-    
-## Start/Stop on Windows - Close cmd window to close
+RCON Web Admin can be partially configured with environment variables. You may configure the initial user and server with these environment variables.
 
-    startscripts/start-windows.bat
-    
-## Open in browser
-Goto: http://yourserverip:4326 (You can also use your hostname instead of ip).
-To modify the :4326 port or allowed hosts, have a look in the `config.template.js` file in the root folder.
+| Variable | Description | Accepted values | Default value |
+|:--------:|:-----------:|:---------------:|:-------------:|
+| RWA_ENV | Enables configuration by environment variables | TRUE / FALSE | FALSE |
+| RWA_USERNAME | Sets the initial user's username | String | admin |
+| RWA_PASSWORD | Sets the initial user's password | String | |
+| RWA_RESTRICT_COMMANDS | Prevent the initial user user executing these commands | Comma-seperated list | |
+| RWA_RESTRICT_WIDGETS | Hide this list of widgets from the initial user | Comma-seperated list | |
+| RWA_READ_ONLY_WIDGET_OPTIONS | Prevent the initial user changing options in the widget options tab | TRUE / FALSE | FALSE |
+| RWA_ADMIN | Sets the initial user as an admin | TRUE / FALSE | FALSE |
+| RWA_RCON_HOST | The initial RCON server to control | Hostname or IP address | 127.0.0.1 |
+| RWA_GAME | The initial game you wish to control | minecraft / rust / csgo / other | minecraft |
+| RWA_SERVER_NAME | The display name of the initial server (if unset; defaults to value of RWA_GAME) | String | minecraft |
+| RWA_WEB_RCON | Enables 'web rcon' if supported by the game server | TRUE / FALSE | FALSE |
+| RWA_RCON_PORT | The port number of the initial RCON server to control | 0-65535 | 25575 |
+| RWA_RCON_PASSWORD | The password for the initial RCON server to control | String | '' |
+| RWA_WEBSOCKET_URL_SSL | Manually specify SSL WebSocket URL (wss://example) | wss://string | |
+| RWA_WEBSOCKET_URL | Manually specify WebSocket URL (ws://example) | ws://string | |
 
-## Boot scripts
+## Docker Usage
 
-On linux you can start the rcon web admin with your server start. For example on ubuntu you can simply add a `crontab -e` line. Do this with the user you want to start the script with, not `sudo`.
-    
-    @reboot /path/to/startscripts/start-linux.sh start
+[itzg](https://hub.docker.com/r/itzg/) maintains a Docker image for RCON Web Admin, you can find the image [here (itzg/rcon)](https://hub.docker.com/r/itzg/rcon/).
 
-## Widget developers
+## Linux Usage
 
-Goto https://github.com/lacaulac/rcon-web-admin/tree/master/public/widgets for more information.
+```bash
+$ sh startscripts/start-linux.sh start
+$ sh startscripts/start-linux.sh stop
+$ sh startscripts/start-linux.sh restart
+```
+
+## Windows Usage
+
+```powershell
+PS> startscripts/start-windows.bat
+```
+
+With basic usage, you can close the Powershell or Command Prompt window to stop the app.
+
+## Visit the UI
+
+With default configuration, the application will be available at http://localhost:4326 (if visiting remotely; substitute `localhost` with the IP or hostname of the host).
+
+To modify the default port (4326) or allowed hosts, see `/config.template.js`.
+
+## Boot script
+
+On Linux you can automatically launch RCON Web Admin after each reboot by adding a line to crontab.
+
+Run `crontab -e` while logged into the user you wish to execute the app on boot, and add the following line:
+
+```shell
+@reboot /path/to/startscripts/start-linux.sh start
+```
 
 ## Troubleshooting
 
-Linux: If you've installed it and `node` as not available but `nodejs` is, than create a symlink with 
+Linux: If you've installed it and `node` as not available but `nodejs` is, than create a symlink:
 
-    sudo ln -s `which nodejs` /usr/bin/node    
+```shell
+$ sudo ln -s $(which nodejs) /usr/bin/node
+```

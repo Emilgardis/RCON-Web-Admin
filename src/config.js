@@ -13,6 +13,14 @@ var config = {
     "port": 4326
 };
 
+if (process.env.RWA_WEBSOCKET_URL) {
+    config["websocketUrl"] = process.env.RWA_WEBSOCKET_URL;
+}
+
+if (process.env.RWA_WEBSOCKET_URL_SSL) {
+    config["websocketUrlSsl"] = process.env.RWA_WEBSOCKET_URL_SSL;
+}
+
 // load config.js if exist
 if (fs.existsSync(__dirname + "/../config.js")) {
     var configLocal = require(__dirname + "/../config.js");
@@ -20,5 +28,7 @@ if (fs.existsSync(__dirname + "/../config.js")) {
         config[i] = configLocal[i];
     }
 }
+
+process.stdout.write(JSON.stringify(config));
 
 module.exports = config;
