@@ -14,6 +14,9 @@ if (!mode) {
 }
 
 if (mode == "start") {
+    if (process.env.RWA_ENV == "TRUE") {
+        require(__dirname + "/env")
+    }
     require(__dirname + "/routes");
     require(__dirname + "/rconserver");
     require(__dirname + "/websocketmgr");
