@@ -98,10 +98,10 @@ if (mode == "install-widget") {
 // install core widgets
 if (mode == "install-core-widgets") {
     var coreWidgets = [
-        "brainfoolong/rwa-autobot",
-        "brainfoolong/rwa-console",
-        "brainfoolong/rwa-rustboard",
-        "brainfoolong/rwa-timedcommands"
+        "rcon-web-admin/rwa-autobot",
+        "rcon-web-admin/rwa-console",
+        "rcon-web-admin/rwa-rustboard",
+        "rcon-web-admin/rwa-timedcommands"
     ];
     var cbCount = 0;
     for (var i = 0; i < coreWidgets.length; i++) {
