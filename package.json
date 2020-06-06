@@ -1,5 +1,5 @@
 {
-  "author": "BrainFooLong (https://github.com/brainfoolong/rcon-web-admin)",
+  "author": "BrainFooLong (https://github.com/rcon-web-admin/rcon-web-admin)",
   "name": "rcon-web-admin",
   "description": "Self hosted, online RCON administration tool for your server.",
   "version": "0.13.3",
@@ -7,7 +7,7 @@
   "main": "src/main.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/brainfoolong/rcon-web-admin.git"
+    "url": "git://github.com/rcon-web-admin/rcon-web-admin.git"
   },
   "dependencies": {
     "express": "^4.17.1",

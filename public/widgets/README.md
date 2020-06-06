@@ -7,8 +7,8 @@ Creating a new widget is straight forward. Just copy one of the existing widgets
 
 ## Documentation for widgets
 The widget class itself have a good code documentation. Here you can see what functions you can use or override. 
-* For backend: https://github.com/brainfoolong/rcon-web-admin/blob/master/src/widget.js
-* For frontend: https://github.com/brainfoolong/rcon-web-admin/blob/master/public/scripts/widget.js
+* For backend: https://github.com/rcon-web-admin/rcon-web-admin/blob/master/src/widget.js
+* For frontend: https://github.com/rcon-web-admin/rcon-web-admin/blob/master/public/scripts/widget.js
 
 ## Widget as core widget
 If you've developed a widget and you think it's good for a core widget than you have to deal with following requirements for your widget.
@@ -17,10 +17,10 @@ If you've developed a widget and you think it's good for a core widget than you 
 * Public github repository
 
 ## List of core widgets
-* https://github.com/brainfoolong/rwa-autobot
-* https://github.com/brainfoolong/rwa-console
-* https://github.com/brainfoolong/rwa-rustboard
-* https://github.com/brainfoolong/rwa-timedcommands
+* https://github.com/rcon-web-admin/rwa-autobot
+* https://github.com/rcon-web-admin/rwa-console
+* https://github.com/rcon-web-admin/rwa-rustboard
+* https://github.com/rcon-web-admin/rwa-timedcommands
 
 
 ## Tips
