@@ -54,7 +54,7 @@ if (mode == "update-core") {
     var fs = require("fs");
     var unzip = require("unzip");
     //Get the update zip from the git repository
-    request.get("https://codeload.github.com/lacaulac/rcon-web-admin/zip/master", true, function (contents) {
+    request.get("https://codeload.github.com/rcon-web-admin/rcon-web-admin/zip/master", true, function (contents) {
         if (!contents.length) {
             console.error("Cannot load rcon-web-admin zip file");
             process.exit(0);

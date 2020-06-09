@@ -39,7 +39,7 @@ If you'd like to buy some coffee to support the original developer, he would app
 ## Widgets
 
 All components of the dashboard are written as widgers. Widgets can be very simple to very complex, depending on what is necessary.
-Widgets are written in HTML and JS. Visit [here](https://github.com/lacaulac/rcon-web-admin/tree/master/public/widgets) for more information.
+Widgets are written in HTML and JS. Visit [here](https://github.com/rcon-web-admin/rcon-web-admin/tree/master/public/widgets) for more information.
 
 ## Requirements
 
@@ -67,7 +67,7 @@ Run the following commands in the shell:
 ```bash
 $ sudo apt-get install nodejs npm
 $ sudo npm update npm -g
-$ wget https://codeload.github.com/lacaulac/rcon-web-admin/zip/master -O rcon-web-admin.zip
+$ wget https://codeload.github.com/rcon-web-admin/rcon-web-admin/zip/master -O rcon-web-admin.zip
 $ unzip rcon-web-admin.zip
 $ mv rcon-web-admin-master rcon-web-admin
 $ cd rcon-web-admin

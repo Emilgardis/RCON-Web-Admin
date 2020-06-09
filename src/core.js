@@ -14,7 +14,7 @@ core.latestVersion = "";
  * Fetch latest version for the core
  */
 core.fetchLatestVersion = function () {
-    request.get("https://raw.githubusercontent.com/brainfoolong/rcon-web-admin/master/package.json", false, function (content) {
+    request.get("https://raw.githubusercontent.com/rcon-web-admin/rcon-web-admin/master/package.json", false, function (content) {
         if (content) {
             var manifest = JSON.parse(content);
             if (manifest && manifest.version) {
