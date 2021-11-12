@@ -97,12 +97,12 @@ if (mode == "install-widget") {
 
 // install core widgets
 if (mode == "install-core-widgets") {
-    var coreWidgets = [
-        "rcon-web-admin/rwa-autobot",
-        "rcon-web-admin/rwa-console",
-        "rcon-web-admin/rwa-rustboard",
-        "rcon-web-admin/rwa-timedcommands"
-    ];
+    var widgetNames = process.argv.slice(3);
+    if (widgetNames.length === 0) {
+        widgetNames = ["autobot", "console", "rustboard", "timedcommands"];
+    }
+
+    var coreWidgets = widgetNames.map(widget => "rcon-web-admin/rwa-" + widget);
     var cbCount = 0;
     for (var i = 0; i < coreWidgets.length; i++) {
         (function (index) {
