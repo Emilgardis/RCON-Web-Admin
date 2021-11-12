@@ -1,7 +1,7 @@
 "use strict";
 
 var Low = require("lowdb");
-var fs = require("fs");
+var FileSync = require('lowdb/adapters/FileSync');
 var hash = require(__dirname + "/hash");
 
 /**
@@ -32,7 +32,7 @@ db.get = function (file, folder) {
     var path = __dirname + '/../db';
     if (folder) path += "/" + folder;
     path += "/" + file + ".json";
-    var inst = Low(path);
+    var inst = Low(new FileSync(path));
     // if getting settings than set some defaults
     if (typeof db._defaults[file] != "undefined") {
         if (file == "settings") {
