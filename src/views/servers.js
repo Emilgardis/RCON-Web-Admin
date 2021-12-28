@@ -75,7 +75,7 @@ var View = function (user, messageData, callback) {
         serverData.active = formData.active == "yes";
         serverData.rcon_port = parseInt(formData.rcon_port);
         serverData.rcon_password = formData.rcon_password;
-        db.get("servers").set(id, serverData).value();
+        db.get("servers").set(id, serverData).write();
 
         if (messageData.id) {
             // reload server if edited

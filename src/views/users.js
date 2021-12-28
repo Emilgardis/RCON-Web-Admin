@@ -62,7 +62,7 @@ function View(user, messageData, callback) {
         userData.readonlyoptions = formData.readonlyoptions == "yes";
         userData.admin = formData.admin == "yes";
         userData.loginHash = hash.random(64);
-        db.get("users").set(id, userData).value();
+        db.get("users").set(id, userData).write();
         messageData.id = null;
         var sessionUserData = userData;
         delete sessionUserData["password"];

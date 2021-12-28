@@ -1,5 +1,3 @@
-### Notice:  __Continued development of the project has moved to this fork.__ The original developer, @brainfoolong, stopped maintaining [the original project](https://github.com/brainfoolong/rcon-web-admin) due to their lack of time.
-
 # RCON Web Admin
 
 RCON Web Admin is a powerful web interface to control your RCON servers. All servers with RCON support should work.

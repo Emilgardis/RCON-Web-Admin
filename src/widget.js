@@ -322,7 +322,7 @@ Widget.delete = function (id, callback) {
                         var widgetEntry = list[i];
                         if (widgetEntry.id !== id) newList.push(widgetEntry);
                     }
-                    db.get("widgets", "server_" + server.id).set("list", newList).value();
+                    db.get("widgets", "server_" + server.id).set("list", newList).write();
                 }
             }
         }

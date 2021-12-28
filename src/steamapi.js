@@ -91,6 +91,7 @@ steamapi.saveDataForId = function (type, id, data) {
     data.timestamp = new Date().getTime() / 1000;
     playerData[type] = data;
     sdb.set(id, playerData).value();
+    sdb.write();
 };
 
 /**

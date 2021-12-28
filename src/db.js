@@ -38,8 +38,9 @@ db.get = function (file, folder) {
         if (file == "settings") {
             db._defaults[file].salt = hash.random(64);
         }
-        inst.defaults(db._defaults[file]).value();
+        inst.defaults(db._defaults[file]).write();
     }
+    
     return inst;
 };
 

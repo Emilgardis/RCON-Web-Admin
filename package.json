@@ -1,14 +1,10 @@
 {
-  "author": "BrainFooLong (https://github.com/rcon-web-admin/rcon-web-admin)",
+  "author": "",
   "name": "rcon-web-admin",
   "description": "Self hosted, online RCON administration tool for your server.",
-  "version": "0.13.3",
+  "version": "0.14.2",
   "license": "MIT",
   "main": "src/main.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/rcon-web-admin/rcon-web-admin.git"
-  },
   "dependencies": {
     "express": "^4.17.1",
     "fstream": ">=1.0.12",

@@ -27,7 +27,7 @@ userData.readonlyoptions = readOnlyWidgetOptions.toUpperCase() == "TRUE";
 userData.admin = admin.toUpperCase() == "TRUE";
 userData.loginHash = hash.random(64);
 
-db.get("users").set(id, userData).value();
+db.get("users").set(id, userData).write();
 
 var host = process.env.RWA_RCON_HOST || '127.0.0.1';
 var webRcon = process.env.RWA_WEB_RCON || 'FALSE'
@@ -45,5 +45,5 @@ serverData.active = true;
 serverData.rcon_port = parseInt(process.env.RWA_RCON_PORT) || 25575;
 serverData.rcon_password = process.env.RWA_RCON_PASSWORD || '';
 
-db.get("servers").set(id, serverData).value();
+db.get("servers").set(id, serverData).write();
 try { fs.mkdirSync(__dirname + "/../db/server_" + id, 0o777); } catch {}
