@@ -1,11 +1,3 @@
-variable "DOCKER_TAG" {
-    default = "dev"
-}
-
-variable "DOCKER_REPO" {
-    default = "rcon-web-admin"
-}
-
 variable "REV" {
     default = "dev"
 }
@@ -14,11 +6,10 @@ group "default" {
     targets = ["app"]
 }
 
+target "docker-metadata-action" {}
+
 target "app" {
-    tags = [
-        "ghcr.io/emilgardis/${DOCKER_REPO}:${DOCKER_TAG}",
-        notequal("dev", DOCKER_TAG) ? "ghcr.io/emilgardis/${DOCKER_REPO}:latest" : "",
-    ]
+    inherits = ["docker-metadata-action"]
     platforms = ["linux/amd64", "linux/arm64"]
     args = {
         revision= "${REV}"
