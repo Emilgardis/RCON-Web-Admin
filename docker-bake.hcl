@@ -6,6 +6,10 @@ variable "DOCKER_REPO" {
     default = "rcon-web-admin"
 }
 
+variable "REV" {
+    default = "dev"
+}
+
 group "default" {
     targets = ["app"]
 }
@@ -17,7 +21,7 @@ target "app" {
     ]
     platforms = ["linux/amd64", "linux/arm64"]
     args = {
-
+        revision= "${REV}"
     }
 }
 

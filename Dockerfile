@@ -1,3 +1,7 @@
+LABEL org.opencontainers.image.title="RCON Web Admin" \
+    org.opencontainers.image.description="RCON administration tool" \ 
+    org.opencontainers.image.source="https://github.com/Emilgardis/RCON-Web-Admin" 
+
 FROM node:latest as node
 ENV NODE_ENV=production
 
@@ -22,3 +26,5 @@ VOLUME ["/opt/rcon-web-admin/db"]
 ENV RWA_ENV=TRUE
 
 ENTRYPOINT ["/usr/local/bin/node", "src/main.js", "start"]
+ARG revision="dev"
+LABEL org.opencontainers.image.revision="${revision}"
