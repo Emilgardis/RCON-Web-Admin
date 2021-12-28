@@ -1,5 +1,5 @@
 variable "DOCKER_TAG" {
-    default = "latest"
+    default = "dev"
 }
 
 variable "DOCKER_REPO" {
@@ -11,7 +11,10 @@ group "default" {
 }
 
 target "app" {
-    tags = ["ghcr.io/emilgardis/${DOCKER_REPO}:${DOCKER_TAG}"]
+    tags = [
+        "ghcr.io/emilgardis/${DOCKER_REPO}:${DOCKER_TAG}",
+        notequal("dev", DOCKER_TAG) ? "ghcr.io/emilgardis/${DOCKER_REPO}:latest" : "",
+    ]
     platforms = ["linux/amd64", "linux/arm64"]
     args = {
 

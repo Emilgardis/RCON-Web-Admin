@@ -6,9 +6,10 @@ This application can install and run on a server, Raspberry Pi, or other devices
 
 Out of the box, RCON Web Admin can check users for high ping, VAC status, or filter the chat for you around the clock.
 
-# Support me
+## Fork specifics
 
-If you'd like to buy some coffee to support the original developer, he would appreciate it. You can do this via [Patreon](https://www.patreon.com/brainfoolong) or  [PayPal](https://www.paypal.me/brainfoolong)
+This fork of [rcon-web-admin](https://github.com/rcon-web-admin/rcon-web-admin) only needs one port (`4326`) for http and ws thanks to the work done on [Minecraft RCON Web Admin](https://github.com/chylex/Minecraft-RCON-Web-Admin).
+I provide a [docker image](https://github.com/Emilgardis/RCON-Web-Admin/pkgs/container/rcon-web-admin) for this fork.
 
 ## Features
 

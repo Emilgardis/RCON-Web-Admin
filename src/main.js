@@ -50,36 +50,37 @@ if (mode == "update-all-widgets") {
 
 // update core
 if (mode == "update-core") {
-    var request = require(__dirname + "/request");
-    var fs = require("fs");
-    var unzip = require("unzip");
-    //Get the update zip from the git repository
-    request.get("https://codeload.github.com/rcon-web-admin/rcon-web-admin/zip/master", true, function (contents) {
-        if (!contents.length) {
-            console.error("Cannot load rcon-web-admin zip file");
-            process.exit(0);
-            return;
-        }
-        var dir = __dirname + "/..";
-        //Write the downloaded zip to a file
-        fs.writeFile(dir + "/master.zip", contents, {"mode": 0o777}, function () {
-            fs.createReadStream(dir + "/master.zip").pipe(unzip.Parse()).on('entry', function (entry) {
-                var fileName = entry.path.split("/").slice(1).join("/");
-                if (!fileName.length) return;
-                var path = dir + "/" + fileName;
-                if (entry.type == "Directory") {
-                    if (!fs.existsSync(path)) fs.mkdirSync(path, 0o777);
-                    entry.autodrain();
-                } else {
-                    entry.pipe(fs.createWriteStream(path));
-                }
-            }).on("close", function () {
-                process.stdout.write("Rcon web admin successfully updated\n");
-                fs.unlinkSync(dir + "/master.zip");
-                process.exit(0);
-            });
-        });
-    });
+    // EG: Cripple update
+    // var request = require(__dirname + "/request");
+    // var fs = require("fs");
+    // var unzip = require("unzip");
+    // //Get the update zip from the git repository
+    // request.get("https://codeload.github.com/rcon-web-admin/rcon-web-admin/zip/master", true, function (contents) {
+    //     if (!contents.length) {
+    //         console.error("Cannot load rcon-web-admin zip file");
+    //         process.exit(0);
+    //         return;
+    //     }
+    //     var dir = __dirname + "/..";
+    //     //Write the downloaded zip to a file
+    //     fs.writeFile(dir + "/master.zip", contents, {"mode": 0o777}, function () {
+    //         fs.createReadStream(dir + "/master.zip").pipe(unzip.Parse()).on('entry', function (entry) {
+    //             var fileName = entry.path.split("/").slice(1).join("/");
+    //             if (!fileName.length) return;
+    //             var path = dir + "/" + fileName;
+    //             if (entry.type == "Directory") {
+    //                 if (!fs.existsSync(path)) fs.mkdirSync(path, 0o777);
+    //                 entry.autodrain();
+    //             } else {
+    //                 entry.pipe(fs.createWriteStream(path));
+    //             }
+    //         }).on("close", function () {
+    //             process.stdout.write("Rcon web admin successfully updated\n");
+    //             fs.unlinkSync(dir + "/master.zip");
+    //             process.exit(0);
+    //         });
+    //     });
+    // });
 }
 
 // update/install a single widget

@@ -23,11 +23,11 @@ core.fetchLatestVersion = function () {
         }
     });
 };
-
-// fetch latest version each hour
-setInterval(core.fetchLatestVersion, 1000 * 60 * 60);
-// and call 5 second after server startup
-setTimeout(core.fetchLatestVersion, 5000);
+// FIXME: (EG) cripple version check
+// // fetch latest version each hour
+// setInterval(core.fetchLatestVersion, 1000 * 60 * 60);
+// // and call 5 second after server startup
+// setTimeout(core.fetchLatestVersion, 5000);
 
 
 module.exports = core;
