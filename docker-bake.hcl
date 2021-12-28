@@ -11,7 +11,7 @@ group "default" {
 }
 
 target "app" {
-    tags = ["emilgardis/${DOCKER_REPO}:${DOCKER_TAG}"]
+    tags = ["ghcr.io/emilgardis/${DOCKER_REPO}:${DOCKER_TAG}"]
     platforms = ["linux/amd64", "linux/arm64"]
     args = {
 
