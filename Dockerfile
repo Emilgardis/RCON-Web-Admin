@@ -1,7 +1,7 @@
 FROM node:latest as node
-LABEL org.opencontainers.image.title="RCON Web Admin" \
-    org.opencontainers.image.description="RCON administration tool" \ 
-    org.opencontainers.image.source="https://github.com/Emilgardis/RCON-Web-Admin" 
+LABEL org.opencontainers.image.title="RCON Web Admin"
+LABEL org.opencontainers.image.description="RCON administration tool"
+LABEL org.opencontainers.image.source="https://github.com/Emilgardis/RCON-Web-Admin" 
 
 ENV NODE_ENV=production
 
