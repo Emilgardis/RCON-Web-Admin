@@ -13,3 +13,7 @@ services:
       RWA_RCON_PASSWORD: ${RWA_PASSWORD:-}
     ports:
       - "4326:4326"
+    volumes:
+      - "db:/opt/rcon-web-admin/db"
+volumes:
+  db:
