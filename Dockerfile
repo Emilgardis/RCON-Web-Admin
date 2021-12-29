@@ -1,4 +1,4 @@
-FROM node:latest as node
+FROM node:current-alpine as node
 ENV NODE_ENV=production
 
 ARG RCON_WEB_ADMIN_VERSION=0.14.1

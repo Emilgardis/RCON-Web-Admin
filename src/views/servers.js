@@ -16,7 +16,7 @@ var fstools = require(__dirname + "/../fstools");
 var View = function (user, messageData, callback) {
     // access denied for everyone except admin
     if (!user.userData || !user.userData.admin) {
-        callback({redirect: "index", "note": {"message": "access.denied", "type": "danger"}});
+        callback({ redirect: "index", "note": { "message": "access.denied", "type": "danger" } });
         return;
     }
 
@@ -42,21 +42,40 @@ var View = function (user, messageData, callback) {
     var server = null;
     // on delete
     if (messageData.form == "servers" && messageData.btn == "delete") {
+        console.log("deleting server", messageData.id);
         server = RconServer.get(messageData.id);
         if (server) {
+            console.log("server exists", server);
             server.removeInstance(true);
             servers = db.get("servers").getState();
             delete servers[messageData.id];
             db.get("servers").setState(servers).write();
             // delete server folder
             var dir = server.serverDbFolder;
+            console.log("deleting server", server, "in folder", dir);
             if (fs.existsSync(dir)) {
                 fstools.deleteRecursive(dir);
             }
             deeperCallback({
-                "note": {"message": "deleted", "type": "success"},
+                "note": { "message": "deleted", "type": "success" },
                 "redirect": "servers"
             });
+        } else {
+            servers = db.get("servers").getState();
+            if (servers[messageData.id]) {
+                console.log("server was deleted but not fully, deleting from db");
+                delete servers[messageData.id];
+                db.get("servers").setState(servers).write();
+                deeperCallback({
+                    "note": { "message": "deleted", "type": "success" },
+                    "redirect": "servers"
+                });
+            } else {
+                deeperCallback({
+                    "note": { "message": "deleted.failed", "type": "danger" },
+                    "redirect": "servers"
+                });
+            }
         }
         return;
     }
@@ -92,7 +111,7 @@ var View = function (user, messageData, callback) {
         }
         messageData.id = null;
         deeperCallback({
-            "note": {"message": "saved", "type": "success"},
+            "note": { "message": "saved", "type": "success" },
             "redirect": "servers"
         });
         return;

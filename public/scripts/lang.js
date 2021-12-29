@@ -150,6 +150,7 @@ lang.values.en = {
     "saved": "Saved",
     "delete": "Delete",
     "deleted": "Deleted",
+    "deleted.failed": "Failed to delete",
     "edit": "Edit",
     "edited": "Edited",
     "submit": "Submit",
