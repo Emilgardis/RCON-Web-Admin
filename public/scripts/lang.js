@@ -43,7 +43,7 @@ lang.replaceInHtml = function (el, widget) {
     elements = el.find("[data-translate-property]");
     elements.each(function () {
         var s = $(this).attr("data-translate-property").split(",");
-        $(this).attr(s[0], get(s[1]));
+        $(this).attr(s[0], get(s[1].trim()));
     });
     elements.removeAttr("data-translate-property");
 };
@@ -97,7 +97,7 @@ lang.values.en = {
     "login.title": "Welcome",
     "login.success": "Successfully authenticated",
     "login.failed": "Login failed",
-    "logout.title": "Godspeed!",
+    "logout.title": "Good bye!",
     "logout": "Logout",
     "index.pickserver": "Pick a server",
     "index.addwidget": "Add a widget",
