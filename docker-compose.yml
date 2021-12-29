@@ -3,8 +3,7 @@ version: "3"
 services:
 
   rcon-web-admin:
-    image: ghcr.io/emilgardis/rcon-web-admin
-    build: .
+    image: ghcr.io/emilgardis/rcon-web-admin:latest
     environment:
       RWA_USERNAME: ${RWA_USERNAME:?no username set}
       RWA_PASSWORD: ${RWA_PASSWORD:?no password set}
