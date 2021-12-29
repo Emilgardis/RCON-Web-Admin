@@ -159,6 +159,7 @@ function WebSocketUser(socket) {
                         break;
                 }
             } catch (e) {
+                console.error(e);
                 sendCallback({
                     "error": {
                         "message": e.message,

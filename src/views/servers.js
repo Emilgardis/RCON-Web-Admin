@@ -47,9 +47,9 @@ var View = function (user, messageData, callback) {
             server.removeInstance(true);
             servers = db.get("servers").getState();
             delete servers[messageData.id];
-            db.get("servers").setState(servers);
+            db.get("servers").setState(servers).write();
             // delete server folder
-            var dir = __dirname + "/../../db/server_" + messageData.id;
+            var dir = server.serverDbFolder;
             if (fs.existsSync(dir)) {
                 fstools.deleteRecursive(dir);
             }
