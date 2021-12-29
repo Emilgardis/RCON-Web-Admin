@@ -46,3 +46,13 @@ jobs:
           files: | 
             docker-bake.hcl
             ${{ steps.meta.outputs.bake-file}}
+      - name: Delete old images
+        uses: snok/container-retention-policy@v1
+        with:
+          image-names: ${{ env.IMAGE_NAME}}
+          cut-off: One day ago UTC
+          keep-at-least: 2
+          account-type: personal
+          # I want to only consider sha-* and untagged images for this, the rest I want to keep forever, see https://github.com/snok/container-retention-policy/issues/10
+          token: ${{ secrets.GH_TOKEN_DELETE }}
+          untagged-only: true
