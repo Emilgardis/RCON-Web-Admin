@@ -131,7 +131,7 @@ var View = function (user, messageData, callback) {
                     if (widgetEntry.size().value()) {
                         for (var messageDataIndex in messageData.values) {
                             if (messageData.values.hasOwnProperty(messageDataIndex)) {
-                                widgetEntry.set(messageDataIndex, messageData.values[messageDataIndex]).value();
+                                widgetEntry.set(messageDataIndex, messageData.values[messageDataIndex]).write();
                             }
                         }
                     }
@@ -159,6 +159,7 @@ var View = function (user, messageData, callback) {
                     deeperCallback({});
 
             }
+            wdb.write();
             return;
         }
         deeperCallback({});

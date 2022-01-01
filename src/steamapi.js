@@ -115,6 +115,7 @@ steamapi.cleanup = function () {
             }
         }
         db.get("steamapi").setState(data);
+        db.write();
     } catch (e) {
         console.error(new Date(), "Steamapi cleanup failed", e, e.stack);
     }

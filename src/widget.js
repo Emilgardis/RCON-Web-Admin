@@ -105,7 +105,7 @@ function Widget(id) {
         data[key + ".lifetime"] = lifetime && lifetime > -1 ? (new Date().getTime() / 1000) + lifetime : -1;
         var entry = self.getDbEntry(server);
         if (entry) {
-            entry.set("storage", data).value();
+            entry.set("storage", data).write();
         }
     };
 
