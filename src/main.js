@@ -88,7 +88,7 @@ if (mode == "install-widget") {
     var widgetRepository = process.argv[3];
     if (!widgetRepository) {
         process.stdout.write("Usage: node main.js install-widget widgetRepositoryHere");
-        return;
+        process.exit(-1);
     }
     Widget.install(widgetRepository, function (success) {
         process.stdout.write("Widget " + widgetRepository + " " + (success ? "successfully installed" : "error") + "\n");
@@ -99,11 +99,13 @@ if (mode == "install-widget") {
 // install core widgets
 if (mode == "install-core-widgets") {
     var widgetNames = process.argv.slice(3);
+    var coreWidgets = [];
     if (widgetNames.length === 0) {
-        widgetNames = ["autobot", "console", "rustboard", "timedcommands"];
+        widgetNames = ["autobot", "rustboard", "timedcommands"];
+        coreWidgets.push("emilgardis/rwa-console");
     }
 
-    var coreWidgets = widgetNames.map(widget => "rcon-web-admin/rwa-" + widget);
+    coreWidgets = coreWidgets.concat(widgetNames.map(widget =>  (!widget.includes("/")) ?  "rcon-web-admin/rwa-" + widget : widget));
     var cbCount = 0;
     for (var i = 0; i < coreWidgets.length; i++) {
         (function (index) {
