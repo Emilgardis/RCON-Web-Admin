@@ -159,7 +159,6 @@ var View = function (user, messageData, callback) {
                     deeperCallback({});
 
             }
-            wdb.write();
             return;
         }
         deeperCallback({});

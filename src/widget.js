@@ -169,7 +169,8 @@ function Widget(id) {
             data[key] = value;
             var entry = self.getDbEntry(server);
             if (entry) {
-                entry.set("options", data).value();
+                entry.set("options", data).write();
+                entry.write();
             }
         }
     };

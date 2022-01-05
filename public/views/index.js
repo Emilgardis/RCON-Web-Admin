@@ -281,7 +281,7 @@ View.register("index", function (messageData) {
                 var widget = Widget.getByElement(e);
                 var o = e.closest(".option");
                 var id = o.attr("data-id");
-                widget.options.set(id, option.htmlValueToDb(o.attr("data-type"), e.val())).write();
+                widget.options.set(id, option.htmlValueToDb(o.attr("data-type"), e.val()));
                 note("saved", "success");
             }
         }, ev.type == "keyup" && ev.keyCode == 13 ? 0 : 600));
